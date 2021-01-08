@@ -1,0 +1,47 @@
+.task-mark {
+  padding-top: 5px;
+  &-star {
+    display: none;
+    &-custom {
+      cursor: pointer;
+      padding-right: 8px;
+      &-on {
+        color: $yolk-yellow;
+      }
+    }
+  }
+  &-pen {
+    display: none;
+    &-custom {
+      cursor: pointer;
+      padding-right: 8px;
+    }
+  }
+  &-delete {
+    padding: 0;
+    cursor: pointer;
+    width: 1.25rem;
+  }
+}
+
+.task-mark-star:checked + .task-mark-star-custom::before {
+  font-weight: 900;
+  color: $yolk-yellow;
+}
+
+.is-edit {
+  color: $royal-blue;
+}
+
+.task-mark-star.d-none {
+  display: none;
+}
+
+@include mediaquery_pad {
+  .task-mark {
+    font-size: 24px;
+    &-mark-star, &-mark-star-shiny {
+      padding-right: 15px;
+    }
+  }
+}
